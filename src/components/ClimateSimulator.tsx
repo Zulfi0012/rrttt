@@ -28,7 +28,7 @@ export function ClimateSimulator({ profile, latitude, longitude }: ClimateSimula
     queryKey: ["/api/weather", latitude, longitude],
     enabled: !!(latitude && longitude),
     queryFn: async () => {
-      const response = await fetch(`http://wh1403944.ispot.cc/api/weather?lat=${latitude}&lon=${longitude}`);
+      const response = await fetch(`https://wh1403944.ispot.cc/api/weather?lat=${latitude}&lon=${longitude}`);
       if (!response.ok) {
         throw new Error('Failed to fetch weather data');
       }

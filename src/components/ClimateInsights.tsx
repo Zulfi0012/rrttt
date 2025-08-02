@@ -44,7 +44,7 @@ export function ClimateInsights({ location, weather, userProfile }: ClimateInsig
     queryKey: ['/api/weather', location?.latitude, location?.longitude],
     enabled: !!(location && !weather),
     queryFn: async () => {
-      const response = await fetch(`http://wh1403944.ispot.cc/api/weather?lat=${location?.latitude}&lon=${location?.longitude}`);
+      const response = await fetch(`https://wh1403944.ispot.cc/api/weather?lat=${location?.latitude}&lon=${location?.longitude}`);
       if (!response.ok) {
         throw new Error('Failed to fetch weather data');
       }
