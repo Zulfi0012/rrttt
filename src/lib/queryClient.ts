@@ -12,7 +12,7 @@ export async function apiRequest(
   url: string,
   data?: unknown | undefined,
 ): Promise<Response> {
-  const baseUrl = import.meta.env.VITE_API_URL || "";
+  const baseUrl = 'http://wh1403944.ispot.cc';
   const fullUrl = url.startsWith('http') ? url : baseUrl + url;
   const res = await fetch(fullUrl, {
     method,
@@ -31,7 +31,7 @@ export const getQueryFn: <T>(options: {
 }) => QueryFunction<T> =
   ({ on401: unauthorizedBehavior }) =>
   async ({ queryKey }) => {
-    const baseUrl = import.meta.env.VITE_API_URL || "";
+    const baseUrl ='http://wh1403944.ispot.cc';
     const url = baseUrl + queryKey.join("/");
     const res = await fetch(url, {
       credentials: "include",
